@@ -73,13 +73,25 @@ export default function NFTSVGPreview() {
 				<title>NFT SVG</title>
 			</Head>
 			<form className="w-11/12 sm:w-6/12 flex flex-col justify-center items-center gap-6 py-6" onSubmit={handleSubmit}>
-				<input className="w-11/12 rounded-md shadow-white p-2" type="text" name="title" defaultValue={query.title} placeholder="NFT Title" />
+				<input
+					className="w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
+					type="text"
+					name="title"
+					defaultValue={query.title}
+					placeholder="NFT Title"
+				/>
 
-				<input className="w-11/12 rounded-md shadow-white p-2" type="text" name="tokenId" defaultValue={tokenId} placeholder={tokenId} />
+				<input
+					className="w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
+					type="text"
+					name="tokenId"
+					defaultValue={tokenId}
+					placeholder={tokenId}
+				/>
 
-				<input type="date" name="date" defaultValue={'2023-01-01'} className="h-fit w-11/12  p-2 rounded-md shadow-md shadow-white" />
+				<input type="date" name="date" defaultValue={'2023-01-01'} className="h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none" />
 
-				<select name="color" id="color" className="h-fit w-11/12  p-2 rounded-md shadow-md shadow-white">
+				<select name="color" id="color" className="h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none">
 					{color.map((color, index) => (
 						<option key={index} value={color.id}>
 							{color.name}
@@ -87,7 +99,10 @@ export default function NFTSVGPreview() {
 					))}
 				</select>
 
-				<button type="submit" className="h-fit w-fit px-6 py-2 backdrop-blur-lg border-2 rounded-md shadow-md hover:shadow-white">
+				<button
+					type="submit"
+					className="h-fit w-fit px-6 py-2 backdrop-blur-lg border-2 rounded-md shadow-white shadow-sm hover:shadow-white hover:shadow-md "
+				>
 					{' '}
 					SVG{' '}
 				</button>
