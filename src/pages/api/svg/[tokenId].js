@@ -8,6 +8,7 @@ const sampleQuery = {
 	day: 10,
 	color: 7,
 	uid: 'NFT SVG Token',
+	title: 'NFT SVG Token',
 };
 
 export default function handler(req, res) {
@@ -20,7 +21,7 @@ export default function handler(req, res) {
 			if (!req.query.tokenId) return res.status(400).send({ message: `Missing token id! ` });
 			else if (!isNumeric(tokenId)) return res.status(400).send({ message: `Invalid token id! ` });
 
-			const base64encodedSVG = generateSVG64(tokenId, sampleQuery.year, sampleQuery.month, sampleQuery.day, sampleQuery.color, sampleQuery.uid);
+			const base64encodedSVG = generateSVG64(tokenId, sampleQuery.year, sampleQuery.month, sampleQuery.day, sampleQuery.color, sampleQuery.title);
 
 			return res.status(200).json({ svg64: base64encodedSVG });
 		} else {

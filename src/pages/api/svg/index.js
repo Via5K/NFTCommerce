@@ -6,14 +6,14 @@ export default function handler(req, res) {
 		if (req.method === 'GET') {
 			console.log(req.query);
 
-			if (!req.query.tokenId || !req.query.year || !req.query.month || !req.query.day || !req.query.color || !req.query.uid)
+			if (!req.query.tokenId || !req.query.year || !req.query.month || !req.query.day || !req.query.color || !req.query.title)
 				return res.status(400).send({ message: `Missing parameters! ` });
 
-			const { year, month, day, color, uid } = req.query;
+			const { tokenId, year, month, day, color, title } = req.query;
 			if (!isNumeric(year) || !isNumeric(month) || !isNumeric(day) || !isNumeric(color) || day > 31 || month > 12 || color > 7 || color < 0)
 				return res.status(400).send({ message: `Invalid parameters! ` });
 
-			const base64encodedSVG = generateSVG64(tokenId, year, month, day, color, uid);
+			const base64encodedSVG = generateSVG64(tokenId, year, month, day, color, title);
 
 			return res.status(200).json({ svg64: base64encodedSVG });
 		} else {

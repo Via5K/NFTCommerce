@@ -10,8 +10,8 @@ const navigation = [
 	{ name: 'Home', href: '/' },
 	{ name: 'Explore', href: '/explore' },
 	{ name: 'Search', href: '/search' },
-	{ name: 'History', href: '/history' },
-	{ name: 'Customize', href: '/customize' },
+	{ name: 'Voting', href: '/Voting' },
+	{ name: 'Collection', href: '/collection' },
 ];
 
 export default function Navbar() {
