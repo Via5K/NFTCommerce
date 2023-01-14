@@ -1,5 +1,4 @@
 import { format } from 'date-fns';
-// const { format } = require('date-fns');
 
 export function dec2bin(dec) {
 	return (dec >>> 0).toString(2);
@@ -61,13 +60,3 @@ export function colorToMaterialName(color) {
 export function isLeapYear(year) {
 	return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
 }
-
-// module.exports = {
-// 	dec2bin,
-// 	stringToBinary,
-// 	isNumeric,
-// 	dateString,
-// 	colorToMaterialName,
-// 	isLeapYear,
-// 	toDate,
-// };

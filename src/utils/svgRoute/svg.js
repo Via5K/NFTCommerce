@@ -1,13 +1,25 @@
 import colorSchemes from './colorSchemes.js';
-import { dateString, dec2bin, stringToBinary } from './utils.js';
+import { dateString, dec2bin, stringToBinary } from './dateFunctions.js';
+import { svg64 } from 'svg64';
 
 let colors = colorSchemes[1];
 
-function generateSVG(tokenId, year, month, day, color) {
+export function generateSVG64(tokenId, year, month, day, color, UID = '_UID_UID_UID_') {
+	try {
+		const svg = generateSVG(tokenId, year, month, day, color, UID);
+		const base64encodedSVG = svg64(svg);
+		return base64encodedSVG;
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+export function generateSVG(tokenId, year, month, day, color, UID = '_UID_UID_UID_') {
 	colors = colorSchemes[color];
 
 	return generateCardSVG(() => {
 		return `
+        ${generateHeader(UID)}
         ${generateCirlceBgSVG(year)}
         ${generateDateStringSVG(year, month, day)}
         ${generateBarcodeSVG(year, month, day)}
@@ -32,6 +44,34 @@ function generateSVG(tokenId, year, month, day, color) {
 // ${generateMonthSVG(month, false, 90, 0.5, '15s', 0.7)}  = 1000
 // ${generateMonthSVG(month)}  =  1500
 // ${fonts}
+
+function generateHeader(header) {
+	return `<text 
+                style="
+                    fill: url(#color-0); 
+                    font-family: 'IBM Plex Mono Serif'; 
+                    font-size: 16px; 
+                    font-weight: 600;"
+                    x="100" 
+                y="250">
+                ${header}
+            </text>`;
+}
+
+// function generateHeader(header) {
+// 	// transform="matrix(0, 1, -1, 0, 364.27713, -56.049316)"
+// 	return `
+//         <text
+//             style="
+//                 fill: ${colors.paper_stroke_bright};
+//                 font-family: 'Roboto Slab Serif';
+//                 font-size: 10px;
+//                 font-weight: 500;"
+//                 x="50"
+//                 y="295"
+//         >${header + '_______________________________________________________'}</text>
+//     `;
+// }
 
 function generateCardSVG(inside) {
 	return `
@@ -74,14 +114,11 @@ function generateCardSVG(inside) {
         </mask>
 
         <rect style="paint-order: fill; filter: url(#drop-shadow-filter-0); vector-effect: non-scaling-stroke; stroke: url(#gradient-0); stroke-width: 1.25px; stroke-opacity: 0.61; fill: url(#gradient-1); pointer-events: none;" x="25" y="25" width="300" height="300" rx="10" ry="10"/>
-        <rect style="fill: none; stroke: url(#color-0); stroke-width: 1.5px;" x="32.5" y="32.5" width="285" height="285" rx="5" ry="5"/>
+        <rect style="fill: none; stroke: url(#color-0); stroke-width: 1.5px;" x="32.5" y="32.5" width="285" height="285" rx="6" ry="6"/>
         ${inside()}
         </svg>
         `;
 }
-// <text x='20%' y='15%' class='base' dominant-baseline='middle' text-anchor='middle' style='fill: ${
-//   colors.background_darker
-// }'> UID </text>
 
 function generateBarcodeSVG(year, month, day) {
 	let str = dateString(year, month, day);
@@ -105,19 +142,19 @@ function generateBarcodeSVG(year, month, day) {
 	}
 	condensed.push(counter);
 
-	let result = '<mask id="barcodeMask"><rect x="32.5" y="233" width="285" height="35" style="fill: white;"/>\n';
+	let result = '<mask id="barcodeMask"><rect x="32.5" y="253" width="285" height="32" style="fill: white;"/>\n';
 
 	let offset = 0;
 	let high = binaryStartsWith === '1';
 	for (let i = 0; i < condensed.length; i++) {
 		let c = condensed[i];
 		if (high) {
-			result += `<rect x="${45 + offset * barWidth}" y="233" width="${c * barWidth}" height="35" style="fill: black;"/>\n`;
+			result += `<rect x="${45 + offset * barWidth}" y="253" width="${c * barWidth}" height="35" style="fill: black;"/>\n`;
 		}
 		offset += c;
 		high = !high;
 	}
-	result += '</mask><rect x="32.5" y="235" width="285" height="32" style="fill: url(#color-0);" mask="url(#barcodeMask)"/>\n';
+	result += '</mask><rect x="32.5" y="260" width="285" height="32" style="fill: url(#color-0);" mask="url(#barcodeMask)"/>\n';
 
 	return result;
 }
@@ -127,10 +164,10 @@ function generateDateStringSVG(year, month, day) {
                 style="
                     fill: url(#color-0); 
                     font-family: 'IBM Plex Mono Serif'; 
-                    font-size: 28px; 
+                    font-size: 15px; 
                     font-weight: 500;"
-                x="49.002" 
-                y="303">
+                    x="200" 
+                y="312">
                 ${dateString(year, month, day)}
             </text>`;
 }
@@ -140,13 +177,13 @@ function generateTokenIdSVG(tokenId) {
         <text 
             transform="matrix(0, 1, -1, 0, 364.27713, -56.049316)" 
             style="
-                fill: ${colors.background_darker}; 
+                fill: ${colors.paper_stroke_bright}; 
                 font-family: 'Roboto Slab Serif'; 
                 font-size: 6px; 
                 font-weight: 300;"
                 x="120" 
                 y="55"
-        >#${tokenId.padStart(5, '0')}</text>
+        >#${tokenId.length < 11 ? tokenId : tokenId.substr(0, 10) + '_'}</text>
     `;
 }
 
@@ -378,5 +415,3 @@ function generateCirlceBgSVG(year, center_x = 175, center_y = 133, from = 95, di
         </g>
     `;
 }
-
-module.exports = { generateSVG };
