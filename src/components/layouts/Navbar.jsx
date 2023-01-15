@@ -102,7 +102,7 @@ export default function Navbar() {
 
 					{/* Mobile Responsive Menu : source:tailwindui.com/components/ */}
 					<Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-						<Dialog.Panel focus="true" className="fixed inset-0 z-40 overflow-y-auto bg-white px-6 py-6 lg:hidden">
+						<Dialog.Panel focus="true" className="fixed inset-0 z-40 overflow-y-auto backdrop-blur-lg px-6 py-6 lg:hidden">
 							<div className="flex h-9 items-center justify-between">
 								<div className="flex">
 									<Link href="#" className="-m-1.5 p-1.5">
@@ -113,7 +113,7 @@ export default function Navbar() {
 								<div className="flex">
 									<button
 										type="button"
-										className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+										className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-white"
 										onClick={() => setMobileMenuOpen(false)}
 									>
 										<span className="sr-only">Close menu</span>
@@ -122,13 +122,13 @@ export default function Navbar() {
 								</div>
 							</div>
 							<div className="mt-6 flow-root">
-								<div className="-my-6 divide-y divide-gray-500/10">
+								<div className="-my-6 divide-y divide-gray-500/10 dark:divide-gray-100/50">
 									<div className="space-y-2 py-6">
 										{navigation.map(item => (
 											<Link
 												key={item.name}
 												href={item.href}
-												className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+												className="-mx-3 block rounded-lg py-2 px-8 md:px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10 dark:text-white dark:hover:bg-gray-400/40"
 												onClick={() => setMobileMenuOpen(false)}
 											>
 												{item.name}
@@ -138,7 +138,7 @@ export default function Navbar() {
 									<div className="py-6">
 										<Link
 											href=""
-											className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-900 dark:text-white hover:bg-gray-400/10"
+											className="-mx-3 block rounded-lg py-2.5 px-8 md:px-3 text-base font-semibold leading-6 text-gray-900 dark:text-white hover:bg-gray-400/10"
 										>
 											Connect
 										</Link>
