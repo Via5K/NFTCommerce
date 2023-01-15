@@ -279,7 +279,7 @@ export default function CategoryFilters({ children }) {
 							{/* Product grid */}
 							<div className="lg:col-span-3">
 								{/* Replace with your content */}
-								<div className="h-[80vh] overflow-y-scroll rounded-lg border-2 border-dashed border-gray-200 lg:h-full">{children}</div>
+								<div className="h-[80vh] rounded-lg lg:h-full">{children}</div>
 								{/* /End replace */}
 							</div>
 						</div>

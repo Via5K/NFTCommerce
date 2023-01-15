@@ -51,7 +51,7 @@ const products = [
 ];
 
 export default function ProductList() {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 
 	return (
 		<div className="backdrop-blur-md">
@@ -61,7 +61,7 @@ export default function ProductList() {
 			<div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
 				<div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 					{products.map(product => (
-						<div key={product.id} className="group relative hover:scale-105 backdrop-blur-3xl" onClick={() => setOpen(true)}>
+						<div key={product.id} className="group relative hover:scale-105 backdrop-blur-3xl" onClick={() => setOpen(open => !open)}>
 							<div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
 								<img src={product.imageSrc} alt={product.imageAlt} className="h-full w-full object-cover object-center lg:h-full lg:w-full" />
 							</div>
