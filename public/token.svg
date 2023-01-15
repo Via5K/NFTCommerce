@@ -1,0 +1,236 @@
+
+        <svg viewBox="0 0 350 350" width="350px" height="350px" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+        <linearGradient gradientUnits="userSpaceOnUse" x1="175" y1="25" x2="175" y2="325" id="gradient-1" gradientTransform="matrix(0.709142, -0.705066, 0.957551, 0.963086, -117.130104, 129.28929)">
+            <stop offset="0" style="stop-color: #415a77"/>
+            <stop offset="1" style="stop-color: #0d1b2a;"/>
+        </linearGradient>
+        <linearGradient gradientUnits="userSpaceOnUse" x1="175" y1="25" x2="175" y2="325" id="gradient-0">
+            <stop offset="0" style="stop-color: rgb(177, 177, 177);"/>
+            <stop offset="1" style="stop-color: rgb(171, 171, 171);"/>
+        </linearGradient>
+        <filter id="drop-shadow-filter-0" x="-500%" y="-500%" width="1000%" height="1000%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="7"/>
+            <feOffset dx="0" dy="0"/>
+            <feComponentTransfer result="offsetblur">
+            <feFuncA id="spread-ctrl" type="linear" slope="0.38"/>
+            </feComponentTransfer>
+            <feFlood flood-color="rgba(0,0,0,1)"/>
+            <feComposite in2="offsetblur" operator="in"/>
+            <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <linearGradient id="color-0">
+            <stop style="stop-color: #f8f8f5;"/>
+        </linearGradient>
+        </defs>
+        <mask id="outerMask">
+            <rect style="fill: black;" x="0" y="0" width="350" height="350"/>
+            <rect style="fill: white;" x="25" y="25" width="300" height="300" rx="10" ry="10"/>
+        </mask>
+
+        <mask id="innerMask">
+            <rect style="fill: black;" x="0" y="0" width="350" height="350"/>
+            <rect style="fill: white;" x="35" y="35" width="280" height="280" rx="4" ry="4"/>
+            <rect x="0" y="233" width="350" height="117" style="fill: black;"/>
+        </mask>
+
+        <rect style="paint-order: fill; filter: url(#drop-shadow-filter-0); vector-effect: non-scaling-stroke; stroke: url(#gradient-0); stroke-width: 1.25px; stroke-opacity: 0.61; fill: url(#gradient-1); pointer-events: none;" x="25" y="25" width="300" height="300" rx="10" ry="10"/>
+        <rect style="fill: none; stroke: url(#color-0); stroke-width: 1.5px;" x="32.5" y="32.5" width="285" height="285" rx="6" ry="6"/>
+        
+        <text 
+                style="
+                    fill: url(#color-0); 
+                    font-family: 'IBM Plex Mono Serif'; 
+                    font-size: 18px; 
+                    font-weight: 600;"
+                    x="40" 
+                y="250">
+                NFT in E-Commerce DApp
+            </text>
+        
+        <g mask="url(#innerMask)">
+            <g transform="matrix(1, 0, 0, 1, 175, 133)">
+                <circle r="95" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="104.65" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="113.6245" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="121.95896375" style="fill: none; stroke: url(#color-0); stroke-width: 0.3; opacity: 0.2;"/>
+<circle r="129.68720002499998" style="fill: none; stroke: url(#color-0); stroke-width: 0.3; opacity: 0.2;"/>
+<circle r="136.84143503015625" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="143.45238176492091" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="149.54930647034016" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="155.160092278718" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="160.3113001800832" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="165.02822741531145" style="fill: none; stroke: url(#color-0); stroke-width: 0.6; opacity: 0.5;"/>
+<circle r="169.3349634013531" style="fill: none; stroke: url(#color-0); stroke-width: 0.3; opacity: 0.2;"/>
+
+            </g>
+        </g>
+    
+        <text 
+                style="
+                    fill: url(#color-0); 
+                    font-family: 'IBM Plex Mono Serif'; 
+                    font-size: 15px; 
+                    font-weight: 500;"
+                    x="195" 
+                y="312">
+                SUN 01 JAN 2023
+            </text>
+        <mask id="barcodeMask"><rect x="32.5" y="253" width="285" height="32" style="fill: white;"/>
+<rect x="47.166666666666664" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="51.5" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="58" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+<rect x="64.5" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="68.83333333333333" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="73.16666666666666" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="77.5" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="81.83333333333333" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="88.33333333333333" y="253" width="6.5" height="35" style="fill: black;"/>
+<rect x="101.33333333333333" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="118.66666666666666" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+<rect x="136" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+<rect x="146.83333333333331" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="153.33333333333331" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="168.5" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="175" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="179.33333333333331" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="185.83333333333331" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="198.83333333333331" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="203.16666666666666" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="209.66666666666666" y="253" width="6.5" height="35" style="fill: black;"/>
+<rect x="222.66666666666666" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="240" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+<rect x="248.66666666666666" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="257.3333333333333" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+<rect x="274.66666666666663" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+<rect x="283.3333333333333" y="253" width="2.1666666666666665" height="35" style="fill: black;"/>
+<rect x="292" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+<rect x="300.66666666666663" y="253" width="4.333333333333333" height="35" style="fill: black;"/>
+</mask><rect x="32.5" y="260" width="285" height="32" style="fill: url(#color-0);" mask="url(#barcodeMask)"/>
+
+        
+        <g transform="matrix(1, 0, 0, 1, 175, 133)">
+            <g transform="matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)">
+                <g><rect style="fill: none; stroke: url(#color-0);" x="-10" y="-10" width="20" height="20" rx="3" ry="3"></rect></g>
+                <g transform="matrix(1, 0, 0, 1, 0, -23)"><rect style="fill: none; stroke: url(#color-0);" x="-10" y="-10" width="20" height="20" rx="3" ry="3"></rect></g>
+                <g transform="matrix(1, 0, 0, 1, 0, 23)"><rect style="fill: none; stroke: url(#color-0);" x="-10" y="-10" width="20" height="20" rx="3" ry="3"></rect></g>
+                <g transform="matrix(1, 0, 0, 1,-23, 0)"><rect style="fill: none; stroke: url(#color-0);" x="-10" y="-10" width="20" height="20" rx="3" ry="3"></rect></g>
+                <g transform="matrix(1, 0, 0, 1, 23, 0)"><rect style="fill: none; stroke: url(#color-0);" x="-10" y="-10" width="20" height="20" rx="3" ry="3"></rect></g>
+                
+            <g>
+                <rect style="fill: url(#color-0);" x="-8.5" y="-8.5" width="17" height="17" rx="2" ry="2" />
+                <animate
+                    attributeType="XML"
+                    attributeName="opacity"
+                    values="0.5;1.0;1.0;1.0;1.0;1.0;1.0"
+                    dur="2.5s"
+                    calcMode="discrete"
+                    repeatCount="indefinite"/>
+            </g>
+        
+            </g>
+        </g>
+    
+        
+        <text 
+            transform="matrix(0, 1, -1, 0, 364.27713, -56.049316)" 
+            style="
+                fill: rgb(177, 177, 177); 
+                font-family: 'Roboto Slab Serif'; 
+                font-size: 6px; 
+                font-weight: 300;"
+                x="290" 
+                y="55"
+        >#12345678</text>
+    
+        
+    <g transform="matrix(1, 0, 0, 1, 175, 133)">
+        <g>
+            <g transform="matrix(0, -1, 1, 0, 0, 0)">
+                <path d="M 60 0 L 59.9005089968417 3.4538416175740365 L 59.60236593602379 6.8962290295719955 L 59.10655956928643 10.315746016764571 L 58.414734172389615 13.701052206639343 L 57.52918409209158 17.040920682235356 L 56.45284613725353 20.32427521471748 L 55.18928983930426 23.540226996213686 L 53.74270561436477 26.678110751095648 L 52.117890866291475 29.72752010594445 L 50.32023407672544 32.67834210090162 L 48.355696934910945 35.52079072795317 L 46.23079456654735 38.245439384921376 L 43.952573927242724 40.84325213753506 L 41.528590432224405 43.30561368590173 L 38.96688289981102 45.62435793600186 L 36.2759468917425 47.791795081451774 L 33.464706538781414 49.80073710572204 L 30.542484945022284 51.64452162023661 L 27.518973269058908 53.31703395929692 L 24.404198584548023 54.812727458556054 L 21.208490626755427 56.12664184979204 L 17.942447535365204 57.254419710976606 L 14.616900707161355 58.19232091708481 L 11.242878875143484 58.937235043721316 L 7.831571533203102 59.48669168242862 L 4.394291827657911 59.838868633467484 L 0.9424390387092522 59.992597948899636 L -2.5125392237519772 59.9473698059315 L -5.959184984618339 59.703334197673584 L -9.38606790241385 59.261300435708264 L -12.78182317649859 58.622734466115816 L -16.135189236915934 57.78975400785949 L -19.435045091888952 56.765121529652724 L -22.670447209108016 55.55223508859969 L -25.830665808497695 54.15511706099164 L -28.905220446102902 52.57840080263182 L -31.88391477108496 50.82731528292824 L -34.75687034056072 48.90766774371327 L -37.514559380142295 46.8258244402998 L -40.14783638153148 44.58868952864367 L -42.64796843237955 42.20368216863023 L -45.00666417782757 39.67871191941911 L -47.21610131768024 37.02215250844492 L -49.26895254802224 34.2428140610659 L -51.15840986124553 31.349913882956933 L -52.87820712389953 28.353045892143246 L -54.42264085748789 25.26214880204947 L -55.78658915329508 22.087473161080688 L -56.96552865851422 18.83954735804431 L -57.955549577344094 15.52914270615126 L -58.75336863730595 12.167237721390766 L -59.35633997777929 8.764981713744715 L -59.76246392464617 5.333657811986512 L -59.9703936219439 1.8846455446877208 L -59.97943949853344 -1.5706168984723639 L -59.789571554970266 -5.020670599938929 L -59.40141946299345 -8.454073916254957 L -58.81627047730331 -11.859440422747564 L -58.03606516655261 -15.225476675088332 L -57.06339097770922 -18.541019662496836 L -55.90147365513294 -21.79507382837869 L -54.55416654282412 -24.97684753562406 L -53.02593780532162 -28.07578885563439 L -51.32185560963041 -31.081620562387798 L -49.44757131732095 -33.98437421548996 L -47.40930074254144 -36.77442321917857 L -45.21380353809829 -39.442514747645724 L -42.86836077796822 -41.97980043080191 L -40.38075081058642 -44.37786569871657 L -37.75922346299027 -46.628757687418236 L -35.01247268136707 -48.72501161350836 L -32.14960769873983 -50.65967553012089 L -29.180122825409455 -52.4263333821279 L -26.11386596233968 -54.019126284131595 L -22.96100594190542 -55.43277195067719 L -19.73199880431503 -56.66258221424885 L -16.43755312154599 -57.70447857295267 L -13.088594483792594 -58.555005716324835 L -9.696229266201714 -59.211342984408425 L -6.271707796059254 -59.6713137220964 L -2.8263870425785544 -59.9333924977182 L 0.6283070469747507 -59.99671016193073 L 4.080917439914891 -59.86105673013632 L 7.519994013858254 -59.526882078868674 L 10.934131529528845 -58.995294453837275 L 14.312007454714848 -58.268056794578165 L 17.64241951393823 -57.34758088789981 L 20.914322839308905 -56.236919369513494 L 24.1168665993576 -54.939755600373665 L 27.239429984372798 -53.46039145130208 L 30.271657428901143 -51.80373303640631 L 33.203492954600634 -49.97527444260598 L 36.02521351955303 -47.98107950922544 L 38.727461263437014 -45.82776171807854 L 41.30127454162522 -43.52246226073728 L 43.738117645284674 -41.07282635572134 L 46.02990910891796 -38.48697789414949 L 48.169048511466855 -35.77349249793697 L 50.1484416820962 -32.94136907988793 " style="stroke: url(#color-0); fill: none;"/>
+            </g>
+        </g>
+        <g>
+            <g transform="matrix(0, -1, 1, 0, 0, 0)"><circle style="fill: url(#color-0);" cx="51.96152422706632" cy="29.999999999999996" r="5" />
+<circle style="fill: url(#color-0);" cx="30.000000000000007" cy="51.96152422706631" r="5" />
+<circle style="fill: url(#color-0);" cx="3.67394039744206e-15" cy="60" r="5" />
+<circle style="fill: #415a77; stroke: url(#color-0);" cx="-29.999999999999986" cy="51.96152422706632" r="2" />
+<circle style="fill: #415a77; stroke: url(#color-0);" cx="-51.961524227066306" cy="30.00000000000002" r="2" />
+<circle style="fill: url(#color-0);" cx="-60" cy="7.34788079488412e-15" r="5" />
+<circle style="fill: url(#color-0);" cx="-51.96152422706633" cy="-29.999999999999982" r="5" />
+<circle style="fill: url(#color-0);" cx="-30.00000000000003" cy="-51.961524227066306" r="5" />
+<circle style="fill: url(#color-0);" cx="-1.1021821192326178e-14" cy="-60" r="5" />
+<circle style="fill: url(#color-0);" cx="29.99999999999996" cy="-51.96152422706634" r="5" />
+<circle style="fill: url(#color-0);" cx="51.961524227066306" cy="-30.00000000000003" r="5" />
+<circle style="fill: #415a77; stroke: url(#color-0);" cx="60" cy="-1.469576158976824e-14" r="2" />
+</g>
+            <animateTransform attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                from="0 0 0"
+                to="360 0 0"
+                dur="15s"
+                repeatCount="indefinite"/>
+        </g>
+    </g>
+    
+        
+    <g transform="matrix(1, 0, 0, 1, 175, 133)">
+        <g>
+            
+            <g transform="matrix(0.5, 0, 0, 0.5, 0, -80)">
+                <path d="M -1.5 -8.5 Q 0 -10.5 1.5 -8.5 L 13.5 7.5 Q 15 9.5 12 9.5 L -12 9.5 Q -15 9.5 -13.5 7.5 Z" data-bx-shape="triangle -15 -10.5 30 20 0.5 0.1 1@fb5b0bef" style="stroke: url(#color-0); fill: none; opacity: 0.25;" data-bx-origin="0.5 0.5"></path>
+            </g>
+        
+            <animateTransform attributeName="transform"
+                              attributeType="XML"
+                              type="rotate"
+                              from="180 0 0"
+                              to="-180 0 0"
+                              dur="30s"
+                              repeatCount="indefinite"/>
+        </g>
+    </g>
+    
+        
+    <g transform="matrix(1, 0, 0, 1, 175, 133)">
+        <g>
+            
+            <g transform="matrix(0.7, 0, 0, 0.7, 0, -80)">
+                <path d="M -1.5 -8.5 Q 0 -10.5 1.5 -8.5 L 13.5 7.5 Q 15 9.5 12 9.5 L -12 9.5 Q -15 9.5 -13.5 7.5 Z" data-bx-shape="triangle -15 -10.5 30 20 0.5 0.1 1@fb5b0bef" style="stroke: url(#color-0); fill: none; opacity: 0.5;" data-bx-origin="0.5 0.5"></path>
+            </g>
+        
+            <animateTransform attributeName="transform"
+                              attributeType="XML"
+                              type="rotate"
+                              from="90 0 0"
+                              to="-270 0 0"
+                              dur="15s"
+                              repeatCount="indefinite"/>
+        </g>
+    </g>
+    
+        
+    <g transform="matrix(1, 0, 0, 1, 175, 133)">
+        <g>
+            
+            <g transform="matrix(0.8, 0, 0, 0.8, 0, -80)">
+                <path d="M -1.5 -8.5 Q 0 -10.5 1.5 -8.5 L 13.5 7.5 Q 15 9.5 12 9.5 L -12 9.5 Q -15 9.5 -13.5 7.5 Z" data-bx-shape="triangle -15 -10.5 30 20 0.5 0.1 1@fb5b0bef" style="fill: url(#color-0); opacity: 1;" data-bx-origin="0.5 0.5"></path>
+            </g>
+        
+            <animateTransform attributeName="transform"
+                              attributeType="XML"
+                              type="rotate"
+                              from="0 0 0"
+                              to="-360 0 0"
+                              dur="10s"
+                              repeatCount="indefinite"/>
+        </g>
+    </g>
+    
+        
+        </svg>
+        

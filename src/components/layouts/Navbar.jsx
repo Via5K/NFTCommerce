@@ -2,18 +2,19 @@ import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon, WalletIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-import { theme, useTheme } from 'next-themes';
+import { useTheme } from 'next-themes';
+import Image from 'next/image';
 
 // * Component Source: https://tailwindui.com/components/
 
 const navigation = [
 	{ name: 'Home', href: '/' },
-	{ name: 'Explore', href: '/explore' },
-	{ name: 'Search', href: '/search' },
-	{ name: 'Voting', href: '/Voting' },
-	{ name: 'Collection', href: '/collection' },
+	{ name: 'Transactions', href: '/transactions' },
+	{ name: 'Voting', href: '/voting' },
+	{ name: 'Products', href: '/products' },
 	{ name: 'Token', href: '/token' },
 ];
+// { name: 'About', href: '/about' },
 
 export default function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<div className="isolate bg-white dark:bg-black">
+		<div className="isolate">
 			<div className="absolute inset-x-0 top-[-20rem] -z-20 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
 				{/* <svg
 					className="relative left-[calc(50%-11rem)] -z-20 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -66,13 +67,13 @@ export default function Navbar() {
 						<div className="flex lg:min-w-0 lg:flex-1 cursor-pointer" aria-label="Global">
 							<Link href="/" className="-m-1.5 p-1.5">
 								<span className="sr-only">Media Player</span>
-								<img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+								<Image src="/token.svg" alt="logo" width={50} height={50} priority />
 							</Link>
 						</div>
 						<div className="flex lg:hidden">
 							<button
 								type="button"
-								className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+								className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-gray-50"
 								onClick={() => setMobileMenuOpen(true)}
 							>
 								<span className="sr-only">Open main menu</span>
@@ -105,9 +106,10 @@ export default function Navbar() {
 						<Dialog.Panel focus="true" className="fixed inset-0 z-40 overflow-y-auto backdrop-blur-lg px-6 py-6 lg:hidden">
 							<div className="flex h-9 items-center justify-between">
 								<div className="flex">
-									<Link href="#" className="-m-1.5 p-1.5">
-										<span className="sr-only">Your Company</span>
-										<img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+									<Link href="/" className="-m-1.5 p-1.5">
+										<span className="sr-only">Your D-Commerce</span>
+										<img className="h-8" src="https://tailwindui.com/img/logos/mark.svg" alt="" />
+										{/* <Image src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="logo" width={50} height={50} priority /> */}
 									</Link>
 								</div>
 								<div className="flex">
