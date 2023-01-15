@@ -1,23 +1,22 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
-import { generateSVG64 } from '../../utils/svgRoute/svg';
+import { generateSVG64 } from '../../utils/tokens/token';
 import Image from 'next/image';
 import { getDate } from 'date-fns';
 
-const tokenId = 11546846435165;
 const color = [
 	{ id: 0, name: 'Blue' },
 	{ id: 1, name: 'Red' },
 	{ id: 2, name: 'Green' },
-	{ id: 3, name: 'Black' },
-	{ id: 4, name: 'Silver' },
-	{ id: 5, name: 'Gold' },
-	{ id: 6, name: 'Neon' },
-	{ id: 7, name: 'Pearl' },
+	{ id: 3, name: 'Silver' },
+	{ id: 4, name: 'Gold' },
+	{ id: 5, name: 'Neon' },
+	{ id: 6, name: 'Pearl' },
+	{ id: 7, name: 'Black' },
 ];
 
 const query = {
-	tokenId: tokenId,
+	tokenId: 12345678,
 	year: 2021,
 	month: 10,
 	day: 10,
@@ -31,10 +30,14 @@ export default function NFTSVGPreview() {
 	const [SVG, setSVG] = useState(``);
 
 	const getSVG = async query => {
-		const url = `/api/svg?tokenId=${query.tokenId}&year=${query.year}&month=${query.month}&day=${query.day}&color=${query.color}&title=${query.title}`;
-		const res = await fetch(url);
-		const { svg64 } = await res.json();
-		setSVG64(svg64);
+		try {
+			const url = `/api/token?tokenId=${query.tokenId}&year=${query.year}&month=${query.month}&day=${query.day}&color=${query.color}&title=${query.title}`;
+			const res = await fetch(url);
+			const svg64 = await res.json();
+			if (svg64 && svg64.includes('data:image/svg+xml;base64,') && svg64.length > 10000) setSVG64(svg64);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	const handleSubmit = async e => {
@@ -68,7 +71,7 @@ export default function NFTSVGPreview() {
 	}
 
 	return (
-		<div className="w-screen min-h-screen flex flex-col justify-start items-center gap-2 bg-gradient-to-r from-gray-300 via-gray-50 to-gray-300 dark:from-gray-900 dark:via-gray-600 dark:to-black select-none">
+		<div className="w-screen min-h-screen flex flex-col justify-start items-center gap-2 select-none">
 			<Head>
 				<title>NFT SVG</title>
 			</Head>
@@ -85,8 +88,8 @@ export default function NFTSVGPreview() {
 					className="w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
 					type="text"
 					name="tokenId"
-					defaultValue={tokenId}
-					placeholder={tokenId}
+					defaultValue={query.tokenId}
+					placeholder={query.tokenId}
 				/>
 
 				<input type="date" name="date" defaultValue={'2023-01-01'} className="h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none" />

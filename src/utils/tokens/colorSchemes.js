@@ -26,15 +26,6 @@ module.exports = [
 		paper_stroke_dark: 'rgb(171, 171, 171)',
 	},
 
-	// black
-	{
-		foreground: '#f8f8f5',
-		background: '#415a77',
-		background_darker: '#0d1b2a',
-		paper_stroke_bright: 'rgb(177, 177, 177)',
-		paper_stroke_dark: 'rgb(171, 171, 171)',
-	},
-
 	// silver
 	{
 		foreground: '#343a40',
@@ -67,6 +58,15 @@ module.exports = [
 		foreground: '#80ffdb',
 		background: '#7400b8',
 		background_darker: '#48bfe3',
+		paper_stroke_bright: 'rgb(177, 177, 177)',
+		paper_stroke_dark: 'rgb(171, 171, 171)',
+	},
+
+	// black
+	{
+		foreground: '#f8f8f5',
+		background: '#415a77',
+		background_darker: '#0d1b2a',
 		paper_stroke_bright: 'rgb(177, 177, 177)',
 		paper_stroke_dark: 'rgb(171, 171, 171)',
 	},

@@ -12,6 +12,7 @@ const navigation = [
 	{ name: 'Search', href: '/search' },
 	{ name: 'Voting', href: '/Voting' },
 	{ name: 'Collection', href: '/collection' },
+	{ name: 'Token', href: '/token' },
 ];
 
 export default function Navbar() {

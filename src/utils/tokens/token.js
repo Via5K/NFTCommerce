@@ -4,9 +4,9 @@ import { svg64 } from 'svg64';
 
 let colors = colorSchemes[1];
 
-export function generateSVG64(tokenId, year, month, day, color, UID = '_UID_UID_UID_') {
+export function generateSVG64(tokenId, year, month, day, color, title = '') {
 	try {
-		const svg = generateSVG(tokenId, year, month, day, color, UID);
+		const svg = generateSVG(tokenId, year, month, day, color, title);
 		const base64encodedSVG = svg64(svg);
 		return base64encodedSVG;
 	} catch (error) {
@@ -14,12 +14,12 @@ export function generateSVG64(tokenId, year, month, day, color, UID = '_UID_UID_
 	}
 }
 
-export function generateSVG(tokenId, year, month, day, color, UID = '_UID_UID_UID_') {
+export function generateSVG(tokenId, year, month, day, color, title = '') {
 	colors = colorSchemes[color];
 
 	return generateCardSVG(() => {
 		return `
-        ${generateHeader(UID)}
+        ${generateTitle(title)}
         ${generateCirlceBgSVG(year)}
         ${generateDateStringSVG(year, month, day)}
         ${generateBarcodeSVG(year, month, day)}
@@ -45,20 +45,20 @@ export function generateSVG(tokenId, year, month, day, color, UID = '_UID_UID_UI
 // ${generateMonthSVG(month)}  =  1500
 // ${fonts}
 
-function generateHeader(header) {
+function generateTitle(title) {
 	return `<text 
                 style="
                     fill: url(#color-0); 
                     font-family: 'IBM Plex Mono Serif'; 
-                    font-size: 16px; 
+                    font-size: 18px; 
                     font-weight: 600;"
-                    x="100" 
+                    x="40" 
                 y="250">
-                ${header}
+                ${title}
             </text>`;
 }
 
-// function generateHeader(header) {
+// function generateTitle(title) {
 // 	// transform="matrix(0, 1, -1, 0, 364.27713, -56.049316)"
 // 	return `
 //         <text
@@ -69,7 +69,7 @@ function generateHeader(header) {
 //                 font-weight: 500;"
 //                 x="50"
 //                 y="295"
-//         >${header + '_______________________________________________________'}</text>
+//         >${title + '_______________________________________________________'}</text>
 //     `;
 // }
 
@@ -166,7 +166,7 @@ function generateDateStringSVG(year, month, day) {
                     font-family: 'IBM Plex Mono Serif'; 
                     font-size: 15px; 
                     font-weight: 500;"
-                    x="200" 
+                    x="195" 
                 y="312">
                 ${dateString(year, month, day)}
             </text>`;
@@ -181,7 +181,7 @@ function generateTokenIdSVG(tokenId) {
                 font-family: 'Roboto Slab Serif'; 
                 font-size: 6px; 
                 font-weight: 300;"
-                x="120" 
+                x="290" 
                 y="55"
         >#${tokenId.length < 11 ? tokenId : tokenId.substr(0, 10) + '_'}</text>
     `;

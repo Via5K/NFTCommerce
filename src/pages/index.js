@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
 import NFTSVGPreview from '@/components/views/NFT';
+import Welcome from '@/components/views/Welcome';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +17,7 @@ export default function Home() {
 			</Head>
 
 			<main className="overflow-x-hidden">
-				<NFTSVGPreview />
+				<Welcome />
 			</main>
 		</>
 	);
