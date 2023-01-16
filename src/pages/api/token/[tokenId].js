@@ -24,7 +24,7 @@ export default function handler(req, res) {
 			const tokenSVG64 = generateSVG64(tokenId, sampleQuery.year, sampleQuery.month, sampleQuery.day, sampleQuery.color, sampleQuery.title);
 
 			return res.status(200).json({
-				name: title,
+				name: `NFT: ${tokenId}`,
 				description: `D-Commerce Token ${tokenId}: NFT in E-Commerce DApp`,
 				image: `${tokenSVG64}`,
 			});

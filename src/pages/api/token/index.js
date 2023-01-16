@@ -12,6 +12,7 @@ export default function handler(req, res) {
 				return res.status(400).send({ message: `Invalid parameters! ` });
 
 			return res.status(200).send(JSON.stringify(generateSVG64(tokenId, year, month, day, color, title)));
+			// return res.status(200).send(generateSVG(tokenId, year, month, day, color, title));
 		} else {
 			// Handle any other HTTP method
 			res.status(400).send({ message: `${req.method} requests are not allowed.` });
