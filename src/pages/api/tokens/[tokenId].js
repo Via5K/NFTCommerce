@@ -26,7 +26,9 @@ export default function handler(req, res) {
 			return res.status(200).json({
 				name: `NFT: ${tokenId}`,
 				description: `D-Commerce Token ${tokenId}: NFT in E-Commerce DApp`,
-				image: `${tokenSVG64}`,
+				image: `https://${req.rawHeaders[1] || 'd-commerce.vercel.app'}/api/tokens/${tokenId}/${sampleQuery.year}/${sampleQuery.month}/${
+					sampleQuery.day
+				}/${sampleQuery.color}/${sampleQuery.uid}/${sampleQuery.title}`,
 			});
 		} else {
 			// Handle any other HTTP method
