@@ -21,7 +21,13 @@ export default function handler(req, res) {
 			if (!req.query.tokenId) return res.status(400).send(`Missing token id! `);
 			else if (!isNumeric(tokenId)) return res.status(400).send(`Invalid token id! `);
 
-			return res.status(200).send(generateSVG64(tokenId, sampleQuery.year, sampleQuery.month, sampleQuery.day, sampleQuery.color, sampleQuery.title));
+			const tokenSVG64 = generateSVG64(tokenId, sampleQuery.year, sampleQuery.month, sampleQuery.day, sampleQuery.color, sampleQuery.title);
+
+			return res.status(200).json({
+				name: title,
+				description: `D-Commerce Token ${tokenId}: NFT in E-Commerce DApp`,
+				image: `${tokenSVG64}`,
+			});
 		} else {
 			// Handle any other HTTP method
 			res.status(400).send(`${req.method} requests are not allowed.`);
