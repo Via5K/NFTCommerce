@@ -77,7 +77,7 @@ export default function NFTSVGPreview() {
 			</Head>
 			<form className="w-11/12 sm:w-6/12 flex flex-col justify-center items-center gap-6 py-6" onSubmit={handleSubmit}>
 				<input
-					className="w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
+					className="text-primary w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
 					type="text"
 					name="title"
 					defaultValue={query.title}
@@ -85,16 +85,21 @@ export default function NFTSVGPreview() {
 				/>
 
 				<input
-					className="w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
+					className="text-primary w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
 					type="text"
 					name="tokenId"
 					defaultValue={query.tokenId}
 					placeholder={query.tokenId}
 				/>
 
-				<input type="date" name="date" defaultValue={'2023-01-01'} className="h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none" />
+				<input
+					type="date"
+					name="date"
+					defaultValue={'2023-01-01'}
+					className="text-primary h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none"
+				/>
 
-				<select name="color" id="color" className="h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none">
+				<select name="color" id="color" className="text-primary h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none">
 					{color.map((color, index) => (
 						<option key={index} value={color.id}>
 							{color.name}
@@ -104,7 +109,7 @@ export default function NFTSVGPreview() {
 
 				<button
 					type="submit"
-					className="h-fit w-fit px-6 py-2 backdrop-blur-lg border-2 rounded-md shadow-white shadow-sm hover:shadow-white hover:shadow-md "
+					className="text-primary h-fit w-fit px-6 py-2 backdrop-blur-lg border-2 rounded-md shadow-white shadow-sm hover:shadow-white hover:shadow-md "
 				>
 					{' '}
 					SVG{' '}
@@ -119,12 +124,12 @@ export default function NFTSVGPreview() {
 
 					<button
 						onClick={() => navigator.clipboard.writeText(SVG64)}
-						className="h-fit w-fit px-6 py-2 backdrop-blur-lg border-2 rounded-md shadow-md hover:shadow-white"
+						className="text-primary h-fit w-fit px-6 py-2 backdrop-blur-lg border-2 rounded-md shadow-md hover:shadow-white"
 					>
 						Copy Encoded SVG URL to Clipboard | Length: {SVG64.length}
 					</button>
 
-					<code className="break-all overflow-y-scroll w-11/12 h-44 select-none">{SVG64}</code>
+					<code className="text-primary break-all overflow-y-scroll w-11/12 h-44 select-none">{SVG64}</code>
 				</>
 			) : (
 				<></>
