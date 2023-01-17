@@ -46,9 +46,14 @@ export default function Welcome() {
 				<div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
 					<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 						<div className="sm:max-w-lg">
-							<h1 className="font text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">Summer styles are finally here</h1>
+							<h1 className="font text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-6xl">
+								D-Commerce: Dencetralized E-Commmerce using NFTs
+							</h1>
 							<p className="mt-4 text-xl text-gray-400">
-								This year, our new summer collection will shelter you from the harsh elements of a world that does not care if you live or die.
+								This dapp is currently under development is expected to complete by the end of Jan 2023. The dapp will be a decentralized e-commerce
+								platform for NFTs. The dapp will be built on the Ethereum blockchain and will be using the Goerli network for transactions. The dapp
+								will be deployed on the Goerli network. Smart contracts are being designed and developed using Solidity. A sample NFT is displayed
+								here.
 							</p>
 						</div>
 						<div>
@@ -64,9 +69,8 @@ export default function Welcome() {
 														alt=""
 														className="h-full w-full object-cover object-center"
 													/> */}
-													<Image src="/token.svg" alt="Sample Token" width={176} height={256} 
-                          />
-                          {/* className="h-fit w-fit object-cover object-center" /> */}
+													<Image src="/token.svg" alt="Sample Token" width={176} height={256} />
+													{/* className="h-fit w-fit object-cover object-center" /> */}
 												</div>
 												<div className="h-64 w-44 overflow-hidden rounded-lg">
 													<img
