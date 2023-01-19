@@ -21,3 +21,33 @@ TODO: /api/products?
 Search by name: return products with name containing the search term
 Search by keyword: return products with description/keyword containing the search term
 */
+
+// ! Only for testing delete the code below later
+
+import { connectToDatabase } from '@/db/connection';
+
+/*
+ * @param {import('next').NextApiRequest} req
+ * @param {import('next').NextApiResponse} res
+ */
+export default async function handler(req, res) {
+	try {
+		if (req.method === 'GET') {
+			const { db, client } = await connectToDatabase();
+			const connected = true; // * await client.isConnected();
+			const data = (await db.collection('products').find({ name: 'John Doe' }).toArray()) || 'No data';
+			console.log(data);
+			// const product = await Product.create({
+			// 	name: 'John Doe',
+			// 	timestamp: Date.now(),
+			// 	product: 'John Doe' + Date.now(),
+			// });
+
+			res.status(200).json({ connected });
+		} else {
+			res.status(400).json({ message: 'Bad Request' });
+		}
+	} catch (error) {
+		console.log(error);
+	}
+}
