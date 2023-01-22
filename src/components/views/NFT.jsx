@@ -77,7 +77,7 @@ export default function NFTSVGPreview() {
 			</Head>
 			<form className="w-11/12 sm:w-6/12 flex flex-col justify-center items-center gap-6 py-6" onSubmit={handleSubmit}>
 				<input
-					className="text-primary w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
+					className="text-primary w-11/12 rounded-md shadow-white shadow-md outline-none p-2 bg-transparent backdrop-blur-lg"
 					type="text"
 					name="title"
 					defaultValue={query.title}
@@ -85,7 +85,7 @@ export default function NFTSVGPreview() {
 				/>
 
 				<input
-					className="text-primary w-11/12 rounded-md shadow-white shadow-md outline-none p-2"
+					className="text-primary w-11/12 rounded-md shadow-white shadow-md outline-none p-2 bg-transparent backdrop-blur-lg"
 					type="text"
 					name="tokenId"
 					defaultValue={query.tokenId}
@@ -96,12 +96,20 @@ export default function NFTSVGPreview() {
 					type="date"
 					name="date"
 					defaultValue={'2023-01-01'}
-					className="text-primary h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none"
+					className="text-primary h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none bg-transparent backdrop-blur-lg"
 				/>
 
-				<select name="color" id="color" className="text-primary h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none">
+				<select
+					name="color"
+					id="color"
+					className="text-primary h-fit w-11/12  p-2 rounded-md shadow-md shadow-white outline-none bg-transparent backdrop-blur-lg option:bg-transparent option:backdrop-blur-lg"
+				>
 					{color.map((color, index) => (
-						<option key={index} value={color.id}>
+						<option
+							key={index}
+							value={color.id}
+							className="bg-transparent backdrop-blur-xl text-green-500  option:bg-transparent option:backdrop-blur-lg"
+						>
 							{color.name}
 						</option>
 					))}
