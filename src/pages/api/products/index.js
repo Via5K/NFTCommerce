@@ -30,9 +30,13 @@ import { connectToDatabase } from '@/db/connection';
  * @param {import('next').NextApiRequest} req
  * @param {import('next').NextApiResponse} res
  */
+
+import DB from '../../../../db.json';
+
 export default async function handler(req, res) {
 	try {
 		if (req.method === 'GET') {
+			return res.status(200).json(DB.products);
 			const { db, client } = await connectToDatabase();
 			const connected = true; // * await client.isConnected();
 			const data = (await db.collection('products').find({ name: 'John Doe' }).toArray()) || 'No data';
