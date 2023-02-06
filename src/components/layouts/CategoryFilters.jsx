@@ -64,7 +64,7 @@ export default function CategoryFilters({ children }) {
 	const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
 	return (
-		<div className="">
+		<div className=" select-none">
 			<div>
 				{/* Mobile filter dialog */}
 				<Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -162,9 +162,9 @@ export default function CategoryFilters({ children }) {
 					</Dialog>
 				</Transition.Root>
 
-				<main className="mx-auto w-full sm:w-10/12 px-4 sm:px-6 lg:px-8">
-					<div className="flex items-baseline justify-between border-b border-gray-200 py-4">
-						<h1 className="text-4xl font-bold tracking-tight text-primary">Products</h1>
+				<main className="mx-auto w-full sm:w-10/12 px-3 sm:px-6 lg:px-8">
+					<div className="flex items-baseline justify-between border-b border-gray-200 py-2 sm:py-4">
+						<h1 className="text-xl sm:text-4xl font-bold tracking-tight text-primary">Products</h1>
 
 						<div className="flex items-center">
 							<Menu as="div" className="relative inline-block text-left">
@@ -222,7 +222,7 @@ export default function CategoryFilters({ children }) {
 						</div>
 					</div>
 
-					<section aria-labelledby="products-heading" className="pt-6 pb-24">
+					<section aria-labelledby="products-heading" className="pt-6 pb-24 max-h-screen">
 						<h2 id="products-heading" className="sr-only">
 							Products
 						</h2>
@@ -279,7 +279,7 @@ export default function CategoryFilters({ children }) {
 							{/* Product grid */}
 							<div className="lg:col-span-3">
 								{/* Replace with your content */}
-								<div className="h-[80vh] rounded-lg lg:h-full">{children}</div>
+								<div className="rounded-lg lg:h-full">{children}</div>
 								{/* /End replace */}
 							</div>
 						</div>

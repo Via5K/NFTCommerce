@@ -11,7 +11,7 @@ export default function ProductList({ products }) {
 			{/* TODO use redux for this  */}
 			<ProductQuickview open={open} setOpen={setOpen} />
 
-			<div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+			<div className="mx-auto max-w-2xl px-2 sm:px-6 lg:max-w-7xl lg:px-8 max-h-[75vh] overflow-y-scroll overflow-x-hidden">
 				<div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 					{products.map(product => (
 						<div key={product.id + Math.random()} className="group relative hover:scale-105 backdrop-blur-3xl" onClick={() => setOpen(open => !open)}>

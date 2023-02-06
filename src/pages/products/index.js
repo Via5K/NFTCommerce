@@ -7,11 +7,14 @@ import Data from '/db.json';
 
 export default function Products({ products }) {
 	const [open, setOpen] = useState(false);
-	console.log(Data.products);
+	console.log(products);
 	return (
 		<>
 			{/* Box with all the filters */}
-			<CategoryFilters>{/* <ProductList products={[...Data.products]} /> */}</CategoryFilters>
+			<CategoryFilters>
+				<ProductList products={products.reverse()} />
+			</CategoryFilters>
+
 			<ProductQuickview open={open} setOpen={setOpen} />
 			{/* <button onClick={() => setOpen(true)} className="w-80 mt-50 bg-red-600">
 				Open
@@ -190,8 +193,10 @@ const products = [
 	// More products...
 ];
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	// * Api calls
+	const res = await fetch(`${process.env.BASE_URL}/api/products`);
+	const products = await res.json();
 	return {
 		props: {
 			products,

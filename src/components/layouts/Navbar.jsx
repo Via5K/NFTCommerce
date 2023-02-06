@@ -26,7 +26,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<div className="isolate">
+		<div className="isolate select-none">
 			<div className="absolute inset-x-0 top-[-20rem] -z-20 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
 				{/* <svg
 					className="relative left-[calc(50%-11rem)] -z-20 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -58,7 +58,7 @@ export default function Navbar() {
 
 					<Link
 						href="/"
-						className="absolute right-36 rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100 dark:hover:ring-gray-200 dark:text-white z-10"
+						className="absolute right-28 sm:right-36 rounded-lg px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100 dark:hover:ring-gray-200 dark:text-white z-10"
 					>
 						<WalletIcon className="h-5 w-5 inline-block" /> Connect
 					</Link>
