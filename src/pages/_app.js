@@ -4,6 +4,7 @@ import Navbar from '@/components/layouts/Navbar';
 import { Provider } from 'react-redux';
 import store from '@/redux/store';
 import Script from 'next/script';
+import { ToastContainer } from 'react-toastify';
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -23,6 +24,21 @@ export default function App({ Component, pageProps }) {
 
 				<Navbar />
 				<Component {...pageProps} />
+
+				<ToastContainer
+					position="bottom-right"
+					autoClose={6000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme="dark"
+				/>
+				{/* Same as */}
+				<ToastContainer />
 			</ThemeProvider>
 		</Provider>
 	);

@@ -1,6 +1,8 @@
 import { BoltIcon, DevicePhoneMobileIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const features = [
 	{
@@ -51,6 +53,10 @@ const SLIDES = [
 ];
 
 export default function Welcome() {
+	// useEffect(() => {
+	// 	toast.default('Welcome to NFT Commerce');
+	// }, []);
+
 	return (
 		<div className=" select-none">
 			{/* Hero Section */}

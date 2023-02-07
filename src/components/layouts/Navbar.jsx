@@ -8,6 +8,7 @@ import { getCurrentAccount } from '@/data/contracts';
 import { useEffect } from 'react';
 import { setAddress } from '@/redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 // * Component Source: https://tailwindui.com/components/
 
@@ -37,6 +38,7 @@ export default function Navbar() {
 
 	useEffect(() => {
 		console.log('address', address);
+		toast.info(`Connected to ${address}`);
 	}, [address]);
 
 	const toggleTheme = () => {
