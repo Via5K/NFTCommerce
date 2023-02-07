@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setProducts } from '@/redux/actions';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function Products({ products }) {
 	const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export default function Products({ products }) {
 
 	useEffect(() => {
 		dispatch(setProducts(products));
+		toast.info('More products coming soon!');
 	}, []);
 
 	return (

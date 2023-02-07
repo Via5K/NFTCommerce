@@ -38,7 +38,7 @@ export default function Navbar() {
 
 	useEffect(() => {
 		console.log('address', address);
-		toast.info(`Connected to ${address}`);
+		if (address && address.length > 25) toast.info(`Connected: ${address}`);
 	}, [address]);
 
 	const toggleTheme = () => {

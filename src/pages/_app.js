@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import store from '@/redux/store';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -36,6 +37,7 @@ export default function App({ Component, pageProps }) {
 					draggable
 					pauseOnHover
 					theme="dark"
+					className="w-fit"
 				/>
 				{/* Same as */}
 				<ToastContainer />
