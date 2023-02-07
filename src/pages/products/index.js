@@ -4,10 +4,17 @@
 import { CategoryFilters, ProductList, ProductQuickview } from '@/components';
 import { useState } from 'react';
 import Data from '/db.json';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setProducts } from '@/redux/actions';
 
 export default function Products({ products }) {
+	const dispatch = useDispatch();
 	const [open, setOpen] = useState(false);
-	console.log(products);
+	useEffect(() => {
+		dispatch(setProducts(products));
+	}, [products]);
+
 	return (
 		<>
 			{/* Box with all the filters */}
@@ -15,7 +22,7 @@ export default function Products({ products }) {
 				<ProductList products={products.reverse()} />
 			</CategoryFilters>
 
-			<ProductQuickview open={open} setOpen={setOpen} />
+			{/* <ProductQuickview open={open} setOpen={setOpen} /> */}
 			{/* <button onClick={() => setOpen(true)} className="w-80 mt-50 bg-red-600">
 				Open
 			</button> */}
@@ -195,7 +202,7 @@ const products = [
 
 export async function getServerSideProps() {
 	// * Api calls
-	const res = await fetch(`${process.env.BASE_URL}/api/products`);
+	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
 	const products = await res.json();
 	return {
 		props: {

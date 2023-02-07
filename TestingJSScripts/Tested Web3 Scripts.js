@@ -1,7 +1,7 @@
 //TESTED FUNCTIONS.
 
 
-async function owner() {
+export async function owner() {
     load();
     const account = await getCurrentAccount();
     //NFT contract ABI
@@ -1035,7 +1035,7 @@ async function owner() {
 
 }
 
-async function viewProp1() {
+export async function viewProp1() {
     load();
     const account = await getCurrentAccount();
     var abi = [{
@@ -2076,7 +2076,7 @@ async function viewProp1() {
     });
 }
 
-async function viewProp2() {
+export async function viewProp2() {
     load();
     const account = await getCurrentAccount();
     var abi = [{
@@ -3118,7 +3118,7 @@ async function viewProp2() {
     });
 }
 
-async function createNFT() {
+export async function createNFT() {
     load();
     const account = await getCurrentAccount();
     var abi = [{
@@ -3207,7 +3207,7 @@ async function createNFT() {
     // console.log(cost);
 }
 
-function _UqUrl() {
+export function _UqUrl() {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var charactersLength = characters.length;
@@ -3217,7 +3217,7 @@ function _UqUrl() {
     return result;
 }
 
-async function removeAllExpiredNFT() {
+export async function removeAllExpiredNFT() {
     load();
     const account = await getCurrentAccount();
     //NFT contract ABI
@@ -4251,20 +4251,20 @@ async function removeAllExpiredNFT() {
     });
 }
 
-async function loadWeb3() {
+export async function loadWeb3() {
     if (window.ethereum) {
         window.web3 = new Web3(window.ethereum);
         window.ethereum.enable();
     }
 }
-async function load() {
+export async function load() {
     await loadWeb3();
 }
-async function getCurrentAccount() {
+export async function getCurrentAccount() {
     const accounts = await window.web3.eth.getAccounts();
     return accounts[0];
 }
-//Simple function that converts the Current Date to unix timestamp format so that it can easily do the operations for expired NFT format. 
+export //Simple function that converts the Current Date to unix timestamp format so that it can easily do the operations for expired NFT format. 
 //Also because block.timestamp gives the time in UNIX Format.
 function convertCurrentDateToUnixTime() {
     const date = new Date();
