@@ -38,12 +38,24 @@ const specifications = [
 	{ name: 'Decentralization', description: '6.25" x 3.55" x 1.15"' },
 ];
 
+const SLIDES = [
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782245/NFTCommerce/slides/43747831-028e-4961-9733-229683365844_aanxid.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782260/NFTCommerce/slides/eccdcd1d-a80f-46ad-8594-f1244d3def91_wmkeoi.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782265/NFTCommerce/slides/625128e5-654e-4c0e-a13c-270ac322157b_ghjy09.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782271/NFTCommerce/slides/0abeddef-3fe6-4319-9786-71b6f7c17786_qkj8dg.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782278/NFTCommerce/slides/f350800e-09ff-4e4d-baf2-6460f080c9f8_rwbi9s.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782303/NFTCommerce/slides/b0e6e0b2-52ac-47f6-9c19-083e8be1707b_ypcyyv.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782308/NFTCommerce/slides/91a1251e-d12d-4c45-abaf-0be731850d85_wiu7ry.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782321/NFTCommerce/slides/b4b0dda8-ef4b-4d73-a992-801389b50c66_h9gzgv.jpg',
+	'https://res.cloudinary.com/dtaakwnul/image/upload/v1675782326/NFTCommerce/slides/cf479bbf-c8f6-40ec-aa22-54372e6a0151_aak0ak.jpg',
+];
+
 export default function Welcome() {
 	return (
 		<div className=" select-none">
 			{/* Hero Section */}
 
-			<div className="relative overflow-hidden">
+			<div className="relative bg-fixed overflow-hidden">
 				<div className="pt-12 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
 					<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 						<div className="sm:max-w-lg">
@@ -174,7 +186,7 @@ export default function Welcome() {
 						store images and metadata.
 					</p>
 
-					<dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+					<dl className="mt-16 grid grid-cols-1 gap-x-4 gap-y-10 md:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
 						{specifications.map(feature => (
 							<div key={feature.name} className="border-t border-gray-200 pt-4">
 								<dt className="font-medium text-gray-900   dark:text-gray-100">{feature.name}</dt>
@@ -183,7 +195,7 @@ export default function Welcome() {
 						))}
 					</dl>
 				</div>
-				<div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
+				{/* <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
 					<img
 						src="https://tailwindui.com/img/ecommerce-images/product-feature-03-detail-01.jpg"
 						alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
@@ -204,6 +216,19 @@ export default function Welcome() {
 						alt="Walnut card tray filled with cards and card angled in dedicated groove."
 						className="rounded-lg"
 					/>
+				</div> */}
+
+				<div className="w-full mx-auto px-2 py-4 grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 sm:gap-6 lg:gap-4">
+					{SLIDES.map((image, index) => (
+						<Image
+							key={index}
+							width={500}
+							height={500}
+							src={image}
+							alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
+							className="rounded-lg w-full shadow-lg hover:shadow-3xl hover:-translate-y-3 lg:hover:scale-125"
+						/>
+					))}
 				</div>
 			</div>
 
