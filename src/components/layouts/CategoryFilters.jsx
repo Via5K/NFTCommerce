@@ -162,7 +162,7 @@ export default function CategoryFilters({ children }) {
 					</Dialog>
 				</Transition.Root>
 
-				<main className="mx-auto w-full sm:w-10/12 px-3 sm:px-6 lg:px-8">
+				<main className="mx-auto w-full md:w-11/12 px-1.5 lg:px-3">
 					<div className="flex items-baseline justify-between border-b border-gray-200 py-2 sm:py-4">
 						<h1 className="text-xl sm:text-4xl font-bold tracking-tight text-primary">Products</h1>
 
@@ -222,7 +222,7 @@ export default function CategoryFilters({ children }) {
 						</div>
 					</div>
 
-					<section aria-labelledby="products-heading" className="pt-6 pb-24 max-h-screen">
+					<section aria-labelledby="products-heading" className="pt-6 sm:pb-16 max-h-screen">
 						<h2 id="products-heading" className="sr-only">
 							Products
 						</h2>
