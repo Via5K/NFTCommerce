@@ -51,8 +51,8 @@ export default function ProductQuickview({ open, setOpen }) {
 					<div className="fixed inset-0 hidden bg-gray-500 bg-opacity-75 transition-opacity md:block" />
 				</Transition.Child>
 
-				<div className="fixed inset-0 z-10 overflow-y-auto">
-					<div className="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4">
+				<div className="fixed inset-0 -z-10 overflow-y-auto">
+					<div className="flex min-h-full items-stretch justify-center text-center md:items-center md:px-2 lg:px-4 -z-20">
 						<Transition.Child
 							as={Fragment}
 							enter="ease-out duration-300"
@@ -62,7 +62,7 @@ export default function ProductQuickview({ open, setOpen }) {
 							leaveFrom="opacity-100 translate-y-0 md:scale-100"
 							leaveTo="opacity-0 translate-y-4 md:translate-y-0 md:scale-95"
 						>
-							<Dialog.Panel className="flex w-full transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
+							<Dialog.Panel className="flex w-11/12 transform text-left text-base transition md:my-8 md:max-w-2xl md:px-4 lg:max-w-4xl">
 								<div className="relative flex w-full items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
 									<button
 										type="button"

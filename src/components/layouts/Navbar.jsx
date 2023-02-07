@@ -4,6 +4,10 @@ import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon, WalletIcon } from '@heroicons/
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
+import { getCurrentAccount } from '@/data/contracts';
+import { useEffect } from 'react';
+import { setAddress } from '@/redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 // * Component Source: https://tailwindui.com/components/
 
@@ -19,14 +23,28 @@ const navigation = [
 export default function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+	const dispatch = useDispatch();
+	const address = useSelector(state => state.appData.address);
+
 	const { theme, setTheme } = useTheme();
+
+	const getAddress = async () => {
+		const address = await getCurrentAccount();
+		console.log(address);
+		if (address.length > 25) dispatch(setAddress(address));
+		else dispatch(setAddress(''));
+	};
+
+	useEffect(() => {
+		console.log('address', address);
+	}, [address]);
 
 	const toggleTheme = () => {
 		setTheme(theme === 'light' ? 'dark' : 'light');
 	};
 
 	return (
-		<div className="isolate">
+		<div className="isolate select-none">
 			<div className="absolute inset-x-0 top-[-20rem] -z-20 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]">
 				{/* <svg
 					className="relative left-[calc(50%-11rem)] -z-20 h-[21.1875rem] max-w-none -translate-x-1/2 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem]"
@@ -56,12 +74,16 @@ export default function Navbar() {
 						<MoonIcon className="absolute h-7 w-7 hover:scale-105 fill-white top-5 right-16 sm:right-20 z-50" onClick={toggleTheme} />
 					)}
 
-					<Link
-						href="/"
-						className="absolute right-36 rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100 dark:hover:ring-gray-200 dark:text-white z-10"
-					>
-						<WalletIcon className="h-5 w-5 inline-block" /> Connect
-					</Link>
+					{address === '' ? (
+						<button
+							onClick={getAddress}
+							className="absolute right-28 sm:right-36 rounded-lg px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100 dark:hover:ring-gray-200 dark:text-white z-10"
+						>
+							<WalletIcon className="h-5 w-5 inline-block" /> Connect
+						</button>
+					) : (
+						<></>
+					)}
 
 					<nav className="flex h-9 items-center justify-between" aria-label="Global">
 						<div className="flex lg:min-w-0 lg:flex-1 cursor-pointer" aria-label="Global">

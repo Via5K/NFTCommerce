@@ -1,5 +1,6 @@
 import { BoltIcon, DevicePhoneMobileIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const features = [
 	{
@@ -43,12 +44,14 @@ export default function Welcome() {
 			{/* Hero Section */}
 
 			<div className="relative overflow-hidden">
-				<div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+				<div className="pt-12 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
 					<div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">
 						<div className="sm:max-w-lg">
-							<h1 className="font text-4xl font-bold tracking-tight text-primary sm:text-6xl">NFT Commerce: Dencetralized E-Commmerce using NFTs</h1>
-							<p className="mt-4 text-xl text-secondary break-all">
-								This dapp currently under development will be a decentralized e-commerce platform for NFTs is expected to complete by the end of Jan 2023. The dapp will be built on the Ethereum blockchain and using the Goerli network for transactions. Smart contracts are being	developed using Solidity. A sample NFT is displayed{' '}<a href="https://nftincommerce.vercel.app/api/tokens/123/2023/01/01/7/Happy%20New%20Year%20Folks">here</a>
+							<h1 className="font text-2xl sm:text-5xl font-bold tracking-tight text-primary">NFT Commerce: Dencetralized E-Commmerce using NFTs</h1>
+							<p className="mt-4 text-base sm:text-xl text-secondary break-words">
+								This dapp is a decentralized e-commerce platform with NFTs. The dapp is built on the Ethereum blockchain and deployed Goerli network.
+								Smart contracts are being developed using Solidity. A sample NFT is displayed{' '}
+								<Link href="/api/tokens/123/2023/01/01/7/Happy%20New%20Year%20Folks">here</Link>
 							</p>
 						</div>
 						<div>
@@ -118,12 +121,12 @@ export default function Welcome() {
 									</div>
 								</div>
 
-								<a
-									href="#"
+								<Link
+									href="/products"
 									className="inline-block rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-center font-medium text-white hover:bg-indigo-700"
 								>
-									Shop Collection
-								</a>
+									Shop Now
+								</Link>
 							</div>
 						</div>
 					</div>
