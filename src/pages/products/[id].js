@@ -20,7 +20,7 @@ export default function ProductPage(props) {
 		}
 		setProduct(props.product);
 
-		buyProducts();
+		// buyProducts();
 		console.log(process.env.NEXT_PUBLIC_CONTRACT_ADDRESS);
 	}, [props]);
 
@@ -30,21 +30,34 @@ export default function ProductPage(props) {
 
 	return (
 		<div>
-			<h1>Product Page {id}</h1>
+			<div className="flex py-6 px-3 flex-col gap-8 justify-center items-center w-full md:w-3/4 mx-auto">
+				{product?.image && (
+					<Image className="w-11/12 object-cover sm:w-8/12 h-max rounded-lg shadow-sm" src={product.image} height={300} width={300} alt=""></Image>
+				)}
 
-			<div className="flex flex-col gap-4 justify-center items-center">
-				{product?.image && <Image className="w-full sm:w-8/12 lg:w-3/5 h-max" src={product.image} height={300} width={300} alt=""></Image>}
+				<div className="text-primary flex flex-col sm:flex-row gap-2 justify-between md:justify-evenly w-full">
+					<span className=" text-center text-xl font-bold">{product?.name}</span>
 
-				<h2 className="w-full text-center text-lg font-bold">{product?.name}</h2>
+					<span className="text-center text-lg  font-bold">{product && `₹${product?.price}`}</span>
+				</div>
 
-				<p className="w-full text-center text-sm font-bold">{product?.description}</p>
+				<p className="text-sm subtext-primary">Seller: {product?.seller}</p>
 
-				<button className="btn-primary" onClick={buyProducts}>
+				<p className="w-full subtext-primary text-sm font-semibold">{product?.description}</p>
+
+				<div className="flex gap-16 justify-center items-center w-full overflow-x-scroll scroll-m-0 scroll-p-0">
+					{product?.images?.length > 0 &&
+						product.images.map((image, index) => (
+							<Image key={index} className="w-full h-max rounded-lg shadow-sm" src={image} height={400} width={400} alt=""></Image>
+						))}
+				</div>
+
+				<button className="fixed bottom-6 btn-primary px-10 animate-bounce" onClick={buyProducts}>
 					Buy
 				</button>
 			</div>
 
-			{product && <p>{JSON.stringify(product)}</p>}
+			{/* {product && <p className="break-words">{JSON.stringify(product)}</p>} */}
 		</div>
 	);
 }

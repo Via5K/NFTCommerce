@@ -9,7 +9,7 @@ const modalDefaultData = {
 };
 
 export const appSlice = createSlice({
-	name: 'addData',
+	name: 'appData',
 
 	initialState: {
 		pageNumber: 0,

@@ -5,22 +5,25 @@ import { CategoryFilters, ProductList, ProductQuickview } from '@/components';
 import { useState } from 'react';
 import Data from '/db.json';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setProducts } from '@/redux/actions';
 import axios from 'axios';
 
 export default function Products({ products }) {
 	const dispatch = useDispatch();
 	const [open, setOpen] = useState(false);
+
+	const { products: productsRedux } = useSelector(state => state.appData.products);
+
 	useEffect(() => {
 		dispatch(setProducts(products));
-	}, [products]);
+	}, []);
 
 	return (
 		<>
 			{/* Box with all the filters */}
 			<CategoryFilters>
-				<ProductList products={products.reverse()} />
+				<ProductList products={products} />
 			</CategoryFilters>
 
 			{/* <ProductQuickview open={open} setOpen={setOpen} /> */}

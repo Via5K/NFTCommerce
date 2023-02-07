@@ -12,8 +12,8 @@ export default function ProductList({ products }) {
 			{/* TODO use redux for this  */}
 			{/* <ProductQuickview open={open} setOpen={setOpen} /> */}
 
-			<div className="mx-auto max-w-2xl px-2 sm:px-6 lg:max-w-7xl lg:px-8 max-h-[82vh] overflow-y-scroll overflow-x-hidden">
-				<div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+			<div className="mx-auto max-w-2xl py-3 px-2 sm:px-6 lg:max-w-7xl lg:px-8 max-h-[82vh] overflow-y-scroll overflow-x-hidden">
+				<div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-6">
 					{products.map(product => (
 						<div
 							key={product.id + Math.random()}
@@ -43,7 +43,7 @@ export default function ProductList({ products }) {
 									<p className="mt-1 text-sm text-secondary">{product.category}</p>
 								</div>
 
-								<p className="text-sm font-medium text-primary">{product.price}</p>
+								<p className="text-sm font-medium text-primary">₹{product.price}</p>
 							</div>
 
 							<Link href={`/products/${product.id}`} className="absolute top-1 right-1 btn-primary py-1 px-2 scale-95 hover:scale-100">

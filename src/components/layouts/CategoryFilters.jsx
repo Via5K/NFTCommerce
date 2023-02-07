@@ -12,11 +12,11 @@ const sortOptions = [
 	{ name: 'Price: High to Low', href: '#', current: false },
 ];
 const subCategories = [
-	{ name: 'Totes', href: '#' },
-	{ name: 'Backpacks', href: '#' },
-	{ name: 'Travel Bags', href: '#' },
-	{ name: 'Hip Bags', href: '#' },
-	{ name: 'Laptop Sleeves', href: '#' },
+	{ name: 'Bikes', href: '/products' },
+	{ name: 'Cars', href: '/products' },
+	{ name: 'Jewelery', href: '/products' },
+	{ name: 'Footwear', href: '/products' },
+	{ name: 'Bags', href: '/products' },
 ];
 const filters = [
 	{
@@ -222,7 +222,7 @@ export default function CategoryFilters({ children }) {
 						</div>
 					</div>
 
-					<section aria-labelledby="products-heading" className="pt-6 sm:pb-16 max-h-screen">
+					<section aria-labelledby="products-heading" className="pt-6 sm:pb-3 max-h-screen">
 						<h2 id="products-heading" className="sr-only">
 							Products
 						</h2>
