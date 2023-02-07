@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { MintNFT } from '@/data/contracts';
 import Image from 'next/image';
+import axios from 'axios';
 
 export default function ProductPage(props) {
 	const router = useRouter();
@@ -50,9 +51,9 @@ export default function ProductPage(props) {
 
 export async function getServerSideProps(context) {
 	const { id } = context.params;
-
-	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
-	const products = await res.json();
+	// axios get req
+	const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
+	const products = res.data;
 	const product = products.find(item => item.id == id);
 
 	return {

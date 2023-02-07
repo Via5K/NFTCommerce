@@ -12,12 +12,12 @@ export default function ProductList({ products }) {
 			{/* TODO use redux for this  */}
 			{/* <ProductQuickview open={open} setOpen={setOpen} /> */}
 
-			<div className="mx-auto max-w-2xl px-2 sm:px-6 lg:max-w-7xl lg:px-8 max-h-[75vh] overflow-y-scroll overflow-x-hidden">
+			<div className="mx-auto max-w-2xl px-2 sm:px-6 lg:max-w-7xl lg:px-8 max-h-[82vh] overflow-y-scroll overflow-x-hidden">
 				<div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 					{products.map(product => (
 						<div
 							key={product.id + Math.random()}
-							className="group relative hover:-translate-y-1 backdrop-blur-3xl"
+							className="group min-w-[120px] relative hover:-translate-y-1 backdrop-blur-3xl"
 							onClick={() => setOpen(open => !open)}
 						>
 							<div className="relative min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:scale-105 lg:aspect-none lg:h-80">
