@@ -39,8 +39,6 @@ export default function App({ Component, pageProps }) {
 					theme="dark"
 					className="w-fit"
 				/>
-				{/* Same as */}
-				<ToastContainer />
 			</ThemeProvider>
 		</Provider>
 	);
