@@ -7,6 +7,7 @@ import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import 'swiper/css/bundle'; // All (extra) CSS of Swiper is imported here
+import { Footer } from '@/components';
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -26,6 +27,7 @@ export default function App({ Component, pageProps }) {
 
 				<Navbar />
 				<Component {...pageProps} />
+				<Footer />
 
 				<ToastContainer
 					position="bottom-right"

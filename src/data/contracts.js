@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import CallerABI from '../../blockchain/src/truffle_abis/Caller.json';
 import { CALLER_ADDRESS } from './constants';
 
@@ -56,43 +57,48 @@ const SAMPLE = {
 };
 
 export async function MintNFT(data) {
-	await loadWeb3();
-	let { cost, pid, UqUrl, name, description, url, trxnHash, sellerAddress } = SAMPLE;
-	let validTill = 1616454545;
+	try {
+		await loadWeb3();
+		let { cost, pid, UqUrl, name, description, url, trxnHash, sellerAddress } = SAMPLE;
+		let validTill = 1616454545;
 
-	const callerAddress = '0xAF1e8d728390eA94ef700D9172FEeEFC34495DD4';
-	const account = await getCurrentAccount();
-	console.log('account', account);
-	const callerContract = new web3.eth.Contract(CallerABI.abi, callerAddress);
+		const callerAddress = '0xAF1e8d728390eA94ef700D9172FEeEFC34495DD4';
+		const account = await getCurrentAccount();
+		console.log('account', account);
+		const callerContract = new web3.eth.Contract(CallerABI.abi, callerAddress);
 
-	let result = await callerContract.methods
-		.createNFT(
-			(cost = 1000),
-			(pid = 1),
-			(UqUrl = 'https://PrashantAmoli.github.io'),
-			(name = 'NFT7Feb'),
-			(description = 'NFT7Feb'),
-			(url = 'https://PrashantAMoli.github.io'),
-			(trxnHash = '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4'),
-			(sellerAddress = '0x82b4F2da4b06cD712ccCEEc9f64c0BCfFd3c6147'),
-			(validTill = 1675769303076)
-		)
-		.send(
-			{
-				from: account,
-			},
-			function (err, result) {
-				if (err) {
-					console.log('Error');
-					console.log(err);
+		let result = await callerContract.methods
+			.createNFT(
+				(cost = 1000),
+				(pid = 1),
+				(UqUrl = 'https://PrashantAmoli.github.io'),
+				(name = 'NFT7Feb'),
+				(description = 'NFT7Feb'),
+				(url = 'https://PrashantAMoli.github.io'),
+				(trxnHash = '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4'),
+				(sellerAddress = '0x82b4F2da4b06cD712ccCEEc9f64c0BCfFd3c6147'),
+				(validTill = 1675769303076)
+			)
+			.send(
+				{
+					from: account,
+				},
+				function (err, result) {
+					if (err) {
+						console.log('Error');
+						console.log(err);
+					}
+					if (result) {
+						console.log('Success', result);
+					}
 				}
-				if (result) {
-					console.log('Success', result);
-				}
-			}
-		);
-	console.log(cost, pid, UqUrl, name, description, url, trxnHash, sellerAddress, validTill);
-	return result;
+			);
+		console.log(cost, pid, UqUrl, name, description, url, trxnHash, sellerAddress, validTill);
+		toast.success('Transaction Successfull! NFT minted for this product.');
+		return result;
+	} catch (error) {
+		toast.error('Transaction unsuccessfull! NFT not minted for this product.');
+	}
 
 	// const result = await callerContract.methods.mintNFT().send({ from: account }, (err, res) => {
 	// 	if (err) {

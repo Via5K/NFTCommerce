@@ -4,6 +4,7 @@ import Modal from './layouts/Modal';
 import MyFlexBox from './layouts/MyFlexBox';
 import PromptModal from './layouts/PromptModal';
 import Navbar from './layouts/Navbar';
+import Footer from './layouts/Footer';
 
 // * /views folder imports
 import NFTSVGPreview from './views/NFT';
@@ -13,4 +14,4 @@ import TransactionCard from './views/TransactionCard';
 import Welcome from './views/Welcome';
 
 // * Single export route for all components
-export { CategoryFilters, Modal, MyFlexBox, PromptModal, Navbar, NFTSVGPreview, ProductList, ProductQuickview, TransactionCard, Welcome };
+export { CategoryFilters, Modal, MyFlexBox, PromptModal, Navbar, NFTSVGPreview, ProductList, ProductQuickview, TransactionCard, Welcome, Footer };
