@@ -6,6 +6,7 @@ import store from '@/redux/store';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import 'swiper/css/bundle'; // All (extra) CSS of Swiper is imported here
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -25,23 +26,20 @@ export default function App({ Component, pageProps }) {
 
 				<Navbar />
 				<Component {...pageProps} />
-
-				<ToastContainer
-					position="bottom-right"
-					autoClose={6000}
-					hideProgressBar={false}
-					newestOnTop={false}
-					closeOnClick
-					rtl={false}
-					pauseOnFocusLoss
-					draggable
-					pauseOnHover
-					theme="dark"
-					className="w-fit"
-				/>
-				{/* Same as */}
-				<ToastContainer />
 			</ThemeProvider>
+			<ToastContainer
+				position="bottom-right"
+				autoClose={6000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+				theme="dark"
+				className="w-fit"
+			/>
 		</Provider>
 	);
 }

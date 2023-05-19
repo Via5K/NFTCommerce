@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { setAddress } from '@/redux/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import axios from 'axios';
 
 // * Component Source: https://tailwindui.com/components/
 
@@ -24,6 +25,8 @@ const navigation = [
 export default function Navbar() {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+	const [balance, setBalance] = useState({});
+
 	const dispatch = useDispatch();
 	const address = useSelector(state => state.appData.address);
 
@@ -37,8 +40,22 @@ export default function Navbar() {
 	};
 
 	useEffect(() => {
+		async function getBalance() {
+			const res = await axios.get(`https://api-goerli.etherscan.io/api
+			?module=account
+			&action=balance
+			&address=${address || '0xa65760c16a47bb1c7d5373d9d18736084e2d3f66'}
+			&tag=latest
+			&apikey=${process.env.NEXT_PUBLIC_ETHERSCAN_API_KEY}`);
+
+			setBalance({ ...res.data });
+		}
+
 		console.log('address', address);
-		if (address && address.length > 25) toast.info(`Connected: ${address}`);
+		if (address && address.length > 25) {
+			getBalance();
+			toast.info(`Connected: ${address}`);
+		}
 	}, [address]);
 
 	const toggleTheme = () => {
@@ -84,7 +101,19 @@ export default function Navbar() {
 							<WalletIcon className="h-5 w-5 inline-block" /> Connect
 						</button>
 					) : (
-						<></>
+						<button
+							disabled
+							className="absolute right-28 sm:right-36 rounded-lg px-2 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20 dark:ring-gray-100 dark:hover:ring-gray-200 dark:text-white z-10 overflow-hidden"
+						>
+							<div className="flex items-center gap-1">
+								<WalletIcon className="h-5 w-5 inline-block" />
+
+								<div className="flex flex-col max-w-[3rem] sm:max-w-[5rem]">
+									<span className="text-xs truncate">{address}</span>
+									<span className="text-xs truncate">.{balance?.result}</span>
+								</div>
+							</div>
+						</button>
 					)}
 
 					<nav className="flex h-9 items-center justify-between" aria-label="Global">

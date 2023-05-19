@@ -1,47 +1,53 @@
 import { PaperClipIcon } from '@heroicons/react/20/solid';
 
-export default function TransactionCard() {
+export default function TransactionCard({ txn, time }) {
 	return (
-		<div className="overflow-hidden backdrop-blur-3xl shadow sm:rounded-lg">
-			<div className="px-4 py-5 sm:px-6 bg-white/60">
-				<h3 className="text-lg font-medium leading-6 text-primary">Transaction Information</h3>
-				<p className="mt-1 max-w-2xl text-sm text-secondary">Personal details and application.</p>
+		<div className="overflow-hidden backdrop-blur-3xl shadow-2xl sm:rounded-lg">
+			<div className="px-4 py-2.5 sm:px-6 backdrop-blur-3xl">
+				<h3 className="text-lg font-semibold leading-6 text-primary">Transaction Information</h3>
+				<p className="mt-1 max-w-2xl text-sm text-secondary">Date: {`${time}`}</p>
 			</div>
+
 			<div className="border-t border-gray-200">
 				<dl>
-					<div className="bg-gray-50/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">From</dt>
-						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">Margot Foster</dd>
+					<div className="backdrop-blur-xl px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">From</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.from}</dd>
 					</div>
-					<div className="bg-white/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">From Address</dt>
-						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">4257y0176057260497r692</dd>
+					<div className="backdrop-blur px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">To</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.to}</dd>
 					</div>
-					<div className="bg-gray-50/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">To</dt>
-						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">Neeraja Nauty</dd>
+					<div className="backdrop-blur-xl px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Hash</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.hash}</dd>
 					</div>
-					<div className="bg-white/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">To Address</dt>
-						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">652461463146354163514651</dd>
+					<div className="backdrop-blur px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Block Number</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.blockNumber}</dd>
 					</div>
-					<div className="bg-gray-50/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">Email address</dt>
-						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">margotfoster@example.com</dd>
+					<div className="backdrop-blur-xl px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Block Hash</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.blockHash}</dd>
 					</div>
-					<div className="bg-white/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">Salary expectation</dt>
-						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">$120,000</dd>
+					<div className="backdrop-blur px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Value</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.value}</dd>
 					</div>
-					<div className="bg-gray-50/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">About</dt>
-						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">
-							Project bnale saale jldi se time kamm ha aur kaam zrada. Kb khoon khaulega re tera, koi contract to ready kr jise call krke frontend pe
-							kaam kr sake aur fir backend aur data base bi create krna ha. eu.
-						</dd>
+					<div className="backdrop-blur-xl px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Gas</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.gas}</dd>
 					</div>
-					<div className="bg-white/50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-						<dt className="text-sm font-medium text-secondary">Attachments</dt>
+					<div className="backdrop-blur px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Gas Price</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.gasPrice}</dd>
+					</div>
+					<div className="backdrop-blur-xl px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Gas Used</dt>
+						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">{txn.gasUsed}</dd>
+					</div>
+					<div className="backdrop-blur px-4 py-2.5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+						<dt className="text-sm font-semibold text-secondary">Attachments</dt>
 						<dd className="mt-1 text-sm text-primary sm:col-span-2 sm:mt-0">
 							<ul role="list" className="divide-y divide-gray-200 rounded-md border border-gray-200">
 								<li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
@@ -50,7 +56,7 @@ export default function TransactionCard() {
 										<span className="ml-2 w-0 flex-1 truncate">resume_back_end_developer.pdf</span>
 									</div>
 									<div className="ml-4 flex-shrink-0">
-										<a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+										<a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
 											Download
 										</a>
 									</div>
@@ -61,7 +67,7 @@ export default function TransactionCard() {
 										<span className="ml-2 w-0 flex-1 truncate">coverletter_back_end_developer.pdf</span>
 									</div>
 									<div className="ml-4 flex-shrink-0">
-										<a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+										<a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
 											Download
 										</a>
 									</div>
