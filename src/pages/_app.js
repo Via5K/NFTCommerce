@@ -40,7 +40,7 @@ export default function App({ Component, pageProps }) {
 					draggable
 					pauseOnHover
 					theme="dark"
-					className="w-fit"
+					className="w-fit bg-transparent backdrop-blur-2xl max-h-[3rem]"
 				/>
 			</ThemeProvider>
 		</Provider>
