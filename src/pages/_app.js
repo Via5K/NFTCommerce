@@ -26,20 +26,21 @@ export default function App({ Component, pageProps }) {
 
 				<Navbar />
 				<Component {...pageProps} />
+
+				<ToastContainer
+					position="bottom-right"
+					autoClose={6000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+					theme="dark"
+					className="w-fit"
+				/>
 			</ThemeProvider>
-			<ToastContainer
-				position="bottom-right"
-				autoClose={6000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-				theme="dark"
-				className="w-fit"
-			/>
 		</Provider>
 	);
 }
