@@ -12,14 +12,24 @@ export async function loadWeb3() {
 	if (window && window.ethereum) {
 		window.web3 = new Web3(window.ethereum);
 		await window.ethereum.enable();
-	} else console.log('No web3 detected. Falling back to http://localhost:3000. You should remove this fallback when you deploy live');
+		toast.success('Web3 (Ethereum) Loaded');
+	} else {
+		toast.error('No web3 detected. Falling back to http://localhost:3000. You should remove this fallback when you deploy live');
+		console.log('No web3 detected. Falling back to http://localhost:3000. You should remove this fallback when you deploy live');
+	}
 }
 
 export async function getCurrentAccount() {
-	await loadWeb3();
-	console.log('getCurrentAccount');
-	const accounts = await window.web3.eth.getAccounts();
-	return accounts[0];
+	try {
+		await loadWeb3();
+		console.log('getCurrentAccount');
+		const accounts = await window.web3.eth.getAccounts();
+		toast.success(`Current Account: ${accounts[0]}`);
+		return accounts[0];
+	} catch (err) {
+		toast.error(`Failed to fetch Current Account`);
+		console.log(err);
+	}
 }
 
 export function _UqUrl() {
