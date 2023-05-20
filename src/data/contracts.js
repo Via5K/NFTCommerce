@@ -167,6 +167,13 @@ export async function viewNFTProp1() {
 				}
 			}
 		);
+		result = {
+			name: result[0],
+			description: result[1],
+			url: result[2],
+			txnHash: result[3],
+			nftType: result[4],
+		};
 		console.log('result', result);
 		return result;
 	} catch (error) {
@@ -194,6 +201,7 @@ export async function viewNFTProp2() {
 				}
 			}
 		);
+		result = { boughtOn: result[0], sellerAddress: result[1], expiry: result[2], expirable: result[3] };
 		console.log('result', result);
 		return result;
 	} catch (error) {
