@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import CallerABI from '../../blockchain/src/truffle_abis/Caller.json';
-import { CALLER_ADDRESS } from './constants';
+import NFTABI from './abi/nft.json';
+import { CALLER_ADDRESS, NFT_ADDRESS } from './constants';
 
 const Web3 = require('web3');
 
@@ -118,4 +119,86 @@ export async function MintNFT(data) {
 	// 	}
 	// });
 	// console.log('Minted NFT. Transaction: ' + result.transactionHash);
+}
+
+export async function viewMyNFTs() {
+	try {
+		await loadWeb3();
+		const contractAddress = NFT_ADDRESS;
+		const account = await getCurrentAccount();
+		console.log('account', account);
+		const nftContract = new web3.eth.Contract(NFTABI.abi, contractAddress);
+
+		let result = await nftContract.methods.viewMyNFTS(account).call(
+			{
+				from: account,
+			},
+			(err, res) => {
+				if (err) {
+					console.log('err', err);
+				} else {
+					console.log('res', res);
+				}
+			}
+		);
+		console.log('result', result);
+		return result;
+	} catch (error) {
+		console.log('error', error);
+		toast.error(`${JSON.stringify(error)}`);
+	}
+}
+export async function viewNFTProp1() {
+	try {
+		await loadWeb3();
+		const contractAddress = NFT_ADDRESS;
+		const account = await getCurrentAccount();
+		console.log('account', account);
+		const nftContract = new web3.eth.Contract(NFTABI.abi, contractAddress);
+
+		let result = await nftContract.methods.viewNFTPropByIndex1(account).call(
+			{
+				from: account,
+			},
+			(err, res) => {
+				if (err) {
+					console.log('err', err);
+				} else {
+					console.log('res', res);
+				}
+			}
+		);
+		console.log('result', result);
+		return result;
+	} catch (error) {
+		console.log('error', error);
+		toast.error(`${JSON.stringify(error)}`);
+	}
+}
+export async function viewNFTProp2() {
+	try {
+		await loadWeb3();
+		const contractAddress = NFT_ADDRESS;
+		const account = await getCurrentAccount();
+		console.log('account', account);
+		const nftContract = new web3.eth.Contract(NFTABI.abi, contractAddress);
+
+		let result = await nftContract.methods.viewNFTPropByIndex2(account).call(
+			{
+				from: account,
+			},
+			(err, res) => {
+				if (err) {
+					console.log('err', err);
+				} else {
+					console.log('res', res);
+				}
+			}
+		);
+		console.log('result', result);
+		return result;
+	} catch (error) {
+		console.log('error', error);
+		toast.error(`${JSON.stringify(error)}`);
+	}
 }
