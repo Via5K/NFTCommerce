@@ -6,9 +6,11 @@ export default function MyDisclosure({ heading, children }) {
 		<Disclosure>
 			{({ open }) => (
 				<>
-					<Disclosure.Button className="py-2">
+					<Disclosure.Button className="text-primary p-2 sm:py-3 sm:px-7 flex justify-between items-center rounded-md backdrop-blur-md bg-black/5">
 						{heading || `Is team pricing available?`}
-						<ChevronUpIcon className={`${open ? 'rotate-180 transform' : ''} h-6 w-6 text-purple-500`} />
+						<ChevronUpIcon
+							className={`${!open ? 'rotate-180 transform' : ''} h-6 w-6 text-purple-500 hover:text-purple-600 hover:scale-110 transition-all`}
+						/>
 					</Disclosure.Button>
 
 					<Transition

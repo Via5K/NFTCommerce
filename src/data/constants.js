@@ -4,4 +4,4 @@ export const NAMING_CONVENTION = 'CAPITALIZED_SNAKE_CASE';
 
 // TODO: Deployed Contract Addresses and ABIs to /data/abi directory
 export const CALLER_ADDRESS = '0xC5c4309bd5B33E066d145bd9Aa972B610a61e2F9';
-export const NFT_ADDRESS = '0xC5c4309bd5B33E066d145bd9Aa972B610a61e2F9';
+export const NFT_ADDRESS = '0x3E6Bf53D12e1d27c771E7FF7Bc375Df20bb9Ec11';

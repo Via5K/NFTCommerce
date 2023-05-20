@@ -26,7 +26,7 @@ const VOTING = [
 ];
 
 export default function Voting() {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 
 	useEffect(() => {
 		toast.info('You can vote for your item of choice.');
@@ -39,11 +39,11 @@ export default function Voting() {
 
 	return (
 		<main className="flex justify-center p-4 sm:px-28">
-			<div className="container flex flex-col gap-8 mx-auto">
+			<div className="container flex flex-col gap-8 mx-auto my-14">
 				{VOTING.map(item => (
 					<div
 						key={item.id}
-						className="relative px-4 py-8 rounded-xl flex flex-col justify-center backdrop-blur bg-gradient-to-tr from-slate-600/30 via-black/30 to-gray-500/40"
+						className="relative px-4 py-8 rounded-xl flex flex-col justify-center backdrop-blur bg-gradient-to-tr from-slate-900/10 via-black/10 to-gray-800/30 shadow-2xl"
 					>
 						<h1 className="text-primary text-lg font-bold">{item.title}</h1>
 						<p className="subtext-primary ">{item.description}</p>

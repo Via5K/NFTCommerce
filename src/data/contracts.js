@@ -9,11 +9,9 @@ console.log('NEXT_PUBLIC_BASE_URL: ', process.env.NEXT_PUBLIC_BASE_URL);
 // const web3 = new Web3(process.env.NEXT_PUBLIC_GOERLI_URL || 'http://localhost:3000');
 
 export async function loadWeb3() {
-	console.log('loadWeb3');
 	if (window && window.ethereum) {
 		window.web3 = new Web3(window.ethereum);
 		await window.ethereum.enable();
-		toast.success('Web3 (Ethereum) Loaded');
 	} else {
 		toast.error('No web3 detected. Falling back to http://localhost:3000. You should remove this fallback when you deploy live');
 		console.log('No web3 detected. Falling back to http://localhost:3000. You should remove this fallback when you deploy live');
@@ -136,12 +134,13 @@ export async function viewMyNFTs() {
 			(err, res) => {
 				if (err) {
 					console.log('err', err);
+					toast.error(`${JSON.stringify(err)}`);
 				} else {
 					console.log('res', res);
+					toast.success(`NFTs: ${res}`);
 				}
 			}
 		);
-		console.log('result', result);
 		return result;
 	} catch (error) {
 		console.log('error', error);

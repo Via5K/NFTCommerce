@@ -31,22 +31,27 @@ export default function ProductList({ products }) {
 								/>
 							</div>
 
-							<div className="mt-4 flex justify-between">
-								<div>
-									<h3 className="text-sm text-primary">
-										<span aria-hidden="true" className="absolute inset-0 max-h-10 overflow-hidden" />
-										{product.name}
-										{/* <a href={product.href}>
+							<Link href={`/products/${product.id}`} className="">
+								<div className="mt-4 flex justify-between">
+									<div>
+										<h3 className="text-sm text-primary">
+											<span aria-hidden="true" className="absolute inset-0 max-h-10 overflow-hidden" />
+											{product.name}
+											{/* <a href={product.href}>
 										</a> */}
-									</h3>
+										</h3>
 
-									<p className="mt-1 text-sm text-secondary">{product.category}</p>
+										<p className="mt-1 text-sm text-secondary">{product.category}</p>
+									</div>
+
+									<p className="text-sm font-medium text-primary">₹{product.price}</p>
 								</div>
+							</Link>
 
-								<p className="text-sm font-medium text-primary">₹{product.price}</p>
-							</div>
-
-							<Link href={`/products/${product.id}`} className="absolute top-1 right-1 btn-primary py-1 px-2 scale-95 hover:scale-100">
+							<Link
+								href={`/products/${product.id}`}
+								className="absolute bottom-20 right-1 btn-primary py-1 px-7 shadow-xl hover:shadow-2xl transition-all scale-95 hover:scale-100"
+							>
 								Buy
 							</Link>
 						</div>
